@@ -6,7 +6,7 @@ from django.db import models
 #         news = cls.objects.filter(title__icontains=search_term)
 #         return news
 
-class MoringaMerch(models.Model):
-    name = models.CharField(max_length=40)
-    description = models.TextField()
-    price = models.DecimalField(decimal_places=2, max_digits=20)
+# class MoringaMerch(models.Model):
+#     name = models.CharField(max_length=40)
+#     description = models.TextField()
+#     price = models.DecimalField(decimal_places=2, max_digits=20)
