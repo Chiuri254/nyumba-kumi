@@ -7,7 +7,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from .models import  MoringaMerch
 from .serializer import MerchSerializer
-# from .models import Profile, Project, Review
+from .models import Profile, Project, Review
 
 
 # Create your views here.takes request from user processes it and returns it.
