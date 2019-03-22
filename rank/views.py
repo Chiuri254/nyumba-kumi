@@ -20,19 +20,10 @@ def welcome(request):
     projects = Project.objects.order_by('-pub_date')
     return render(request,"welcome.html",{"projects":projects})
 
-# def rank_of_the_day(request):
-#     date = dt.date.today()
-#     html = f'''
-#         <html>
-#             <body>
-#                 <h1> {date.day}-{date.month}-{date.year}</h1>
-#                 </body>
-#                 </html>
-#                 '''
-#     return HttpResponse(html)
 
-# class MerchList(APIView):
-#     def get(self, request, format=None):
-#         all_merch = MoringaMerch.objects.all()
-#         serializers = MerchSerializer(all_merch, many=True)
-#         return Response(serializers.data)
+
+class MerchList(APIView):
+    def get(self, request, format=None):
+        all_merch = MoringaMerch.objects.all()
+        serializers = MerchSerializer(all_merch, many=True)
+        return Response(serializers.data)
