@@ -1,0 +1,21 @@
+   .bgimg-1{
+    position: relative;
+    opacity: 1;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   }
+   button {
+    width: 21%;
+    border-radius: 10px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    border: none;
+    outline: none;
+    background-color: #00dc65;
+    font-size: 15px;
+    color: #fff;
+  }
