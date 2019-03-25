@@ -1,14 +1,14 @@
-# Photo Garage
+#    Neighbourhood
 #### A  photo garage application that allows one display their photos
 #### By **JOSEPH CHIURI**
 ## Description
 A  photo garage application that allows users to see different categories of photos based on the location
 ## Behavior Driven Development
-* The program should show various photos;
+*  The program should navigate to the login page on load:
 
      **Input Example**: On page load
 
-     **Output Example**: Category of photos are displayed on landing page
+     **Output Example**: Navigate to the login page
 
 * The program should navigate to pages with photos for a specified location when a  location is clicked:
 
