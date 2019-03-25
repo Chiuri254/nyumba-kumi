@@ -26,7 +26,11 @@
           </div>
         </li>
       </ul>
-      
+       <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search_category' %}">
+        <input class="form-control mr-sm-2" type="text" placeholder=" Search Business" aria-label="Search" name='category'>
+        <button class=btn btn-danger" type="submit">Search</button>
+      </form>
+
     </div>
   </nav>
 </body>
