@@ -1,8 +1,8 @@
 #    Neighbourhood
-#### A  photo garage application that allows one display their photos
+#### A  Web app that allows users to understand their neighbourhood and activities taking place 
 #### By **JOSEPH CHIURI**
 ## Description
-A  photo garage application that allows users to see different categories of photos based on the location
+A  Web app that allows users to understand their neighbourhood and activities taking place 
 ## Behavior Driven Development
 *  The program should navigate to the login page on load:
 
@@ -10,22 +10,36 @@ A  photo garage application that allows users to see different categories of pho
 
      **Output Example**: Navigate to the login page
 
-* The program should navigate to pages with photos for a specified location when a  location is clicked:
+*  The program should navigate to sign up page when Sign Up is clicked on the login form:
 
-     **Input Example**: Click on **Nairobi** on the navigation bar
+     **Input Example**: Click on Sign Up on the login form
 
-     **Output Example**: Redirected to a page with photos taken in Nairobi
+     **Output Example**: Redirected to the sign up page
 
-* The program should navigate to the searched category when a category is entered on the navigation search:
+*   The program should navigate to the login page when Logout is clicked on the navigation bar:
+    **Input Example**: Click on Logout on the navigation bar
 
-    **Input Example**: Enter fashion in the navigation search
+    **Output Example**: Redirected to the login page
 
-    **Output Example**: Redirected to the page with photos on fashion category
-* The program should navigate home page when the app name is clicked on the navbar:
+*  The program should direct the user to their neighborhood page when logged in and already has a neighborhood:
 
-     **Input Example**: Click on **The Photo Garage** on the navigation bar
+     **Input Example**: Log in
 
-     **Output Example**: Redirected to the home page
+     **Output Example**:Redirected to their neighborhood page
+
+* The program should direct the user to the index page with neighborhood listings when logged in and has no neighborhood:
+
+    **Input Example**: Log in
+
+    **Output Example**: Redirect the user to the index page with neighborhood listings
+
+* The program should navigate to the admin dashboard when one logs in as an admin:
+
+    **Input Example**: Login in as Admin
+
+    **Output Example**: Navigate to the admin dashboard
+
+
 
 ## Setup/Installation Requirements
 To start using this project use the following commands:
