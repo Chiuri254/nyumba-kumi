@@ -1,23 +1,12 @@
 from django.shortcuts import render,redirect
-from .models import Image,Category,Location,Health,Authorities,Profile
-from django.http import HttpResponse,Http404,HttpResponseRedirect
-from django.contrib.auth.models import User
-from django.core.exceptions import ObjectDoesNotExist
-from django.contrib.auth.decorators import login_required
-from django.urls import reverse
-
+from .models import Image,Category,Location
+from django.http import Http404
 
 # Create your views here.
 def welcome(request):
-    try:
-        if not request.user.is_authenticated:
-            return redirect('/accounts/login/')
-        current_user=request.user
-        profile =Profile.objects.get(username=current_user)
-    except ObjectDoesNotExist:
-        return redirect('create-profile')
-
-    return render(request,'welcome.html')
+    images = Image.objects.all()
+    locations = Location.objects.all()
+    return render(request,'welcome.html',{'images':images,'locations':locations})
 
 def display_location(request,location_id):
     try:
@@ -40,7 +29,7 @@ def search_category(request):
         message = "You haven't searched for any category"
         return render(request,'search.html',{'message':message,'locations':locations})
 
-# @login_required(login_url='/accounts/login/')
+@login_required(login_url='/accounts/login/')
 def health(request):
     current_user=request.user
     profile=Profile.objects.get(username=current_user)
@@ -49,7 +38,7 @@ def health(request):
    
     return render(request,'health.html',{"healthservices":healthservices})
     
-# @login_required(login_url='/accounts/login/')
+@login_required(login_url='/accounts/login/')
 def authorities(request):
     current_user=request.user
     profile=Profile.objects.get(username=current_user)
