@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-# from tinymce.models import HTMLField
+from tinymce.models import HTMLField
 # Create your models here.
 
 # class Business(models.Model):
@@ -15,6 +15,19 @@ from django.contrib.auth.models import User
 
 #     def __str__(self):
 #         return self.name
+class Category(models.Model):
+    name = models.CharField(max_length = 30)
+
+    def __str__(self):
+        return self.name
+
+    def save_category(self):
+        self.save()
+
+    @classmethod
+    def delete_category(cls,name):
+        cls.objects.filter(name = name).delete()
+
 class Location(models.Model):
     name = models.CharField(max_length = 30)
 
@@ -42,6 +55,34 @@ class Image(models.Model):
     def search_by_category(cls,search_term):
         images = cls.objects.filter(image_category__name__contains = search_term)
         return images
+
+class neighbourhood(models.Model):
+    neighbourhood= models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.neighbourhood
+
+    def save_neighbourhood(self):
+        self.save()
+
+    @classmethod
+    def delete_neighbourhood(cls,neighbourhood):
+        cls.objects.filter(neighbourhood=neighbourhood).delete()
+
+class healthservices(models.Model):
+    healthservices = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.healthservices
+
+    def save_healthservices(self):
+        self.save()
+
+    @classmethod
+    def delete_healthservices(cls,healthservices):
+        cls.objects.filter(healthservices=healthservices).delete()
+
+
 
 class Health(models.Model):
     logo = models.ImageField(upload_to='healthlogo/')

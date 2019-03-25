@@ -1,7 +1,8 @@
 from django.shortcuts import render,redirect
 from .models import Image,Category,Location
-from django.http import Http404
-
+from django.http import HttpResponse,Http404,HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
+from django.core.exceptions import ObjectDoesNotExist
 # Create your views here.
 def welcome(request):
     images = Image.objects.all()
@@ -28,6 +29,7 @@ def search_category(request):
     else:
         message = "You haven't searched for any category"
         return render(request,'search.html',{'message':message,'locations':locations})
+
 
 @login_required(login_url='/accounts/login/')
 def health(request):
