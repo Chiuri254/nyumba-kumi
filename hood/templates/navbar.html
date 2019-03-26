@@ -35,9 +35,21 @@
                
                    
                 {% if user.is_authenticated %}
-                <li class="nav-item">
-                    <a href="/profile/{{user}}" class="nav-link">Profile</a>
-                </li>
+                
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'health'%}">Health Services</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'authorities'%}">Authorities</a>
+      </li>
+      {% if user.is_superuser %}
+      <li class="nav-item">
+        <a class="nav-link" href="/admin">Admin</a>
+      </li>
+      {% endif %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'businesses'%}">Businesses</a>
+      </li>
                 <li class="nav-item">
                     <a href="/logout/" class="nav-link">Logout</a>
                 </li>
@@ -48,8 +60,10 @@
                  <li class="nav-item">
           <a href="/admin" class="nav-link">My Admin</a>
 </li>
-                {% endif %}            
-</ul>
+
+                {% endif %}      
+                      
+
     </div>
   </nav>
 </body>
