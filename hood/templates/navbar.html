@@ -31,6 +31,25 @@
         <button class=btn btn-danger" type="submit">Search</button>
       </form>
 
+      <ul class="navbar-nav ml-auto">
+               
+                   
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a href="/profile/{{user}}" class="nav-link">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/logout/" class="nav-link">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a href="/accounts/login/" class="nav-link">REGISTER/LOG IN</a>
+                </li>
+                 <li class="nav-item">
+          <a href="/admin" class="nav-link">My Admin</a>
+</li>
+                {% endif %}            
+</ul>
     </div>
   </nav>
 </body>

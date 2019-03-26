@@ -22,6 +22,6 @@ urlpatterns = [
     url(r'',include('hood.urls')),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^accounts/', include('django.contrib.auth.urls')),
-    url(r'^logout/$',views.logout, {"next_page":'/'},name="logout"),
+    url(r'^logout/$',views.logout, {"next_page":'/'}),
     url(r'^tinymce',include('tinymce.urls')),
 ]

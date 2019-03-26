@@ -4,6 +4,7 @@ from django.http import HttpResponse,Http404,HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
 # Create your views here.
+@login_required(login_url='/accounts/login/')
 def welcome(request):
     images = Image.objects.all()
     locations = Location.objects.all()
@@ -31,19 +32,3 @@ def search_category(request):
         return render(request,'search.html',{'message':message,'locations':locations})
 
 
-@login_required(login_url='/accounts/login/')
-def health(request):
-    current_user=request.user
-    profile=Profile.objects.get(username=current_user)
-    healthservices = Health.objects.filter(neighbourhood=profile.neighbourhood)
-
-   
-    return render(request,'health.html',{"healthservices":healthservices})
-    
-@login_required(login_url='/accounts/login/')
-def authorities(request):
-    current_user=request.user
-    profile=Profile.objects.get(username=current_user)
-    authorities = Authorities.objects.filter(neighbourhood=profile.neighbourhood)
-
-    return render(request,'authorities.html',{"authorities":authorities})
