@@ -62,7 +62,7 @@ You need the following to work on the project:
 -virtualenv
 -A text  Editor`
 ## Link to Live Website
-https://jgarage-django.herokuapp.com/
+https://nkumi.herokuapp.com/
 
 
 ## Technologies Used
